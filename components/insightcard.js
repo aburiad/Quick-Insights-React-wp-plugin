@@ -1,5 +1,5 @@
 import React from 'react';
-import cardcss from './assets/css/insightcard.css';
+import cardcss from './assets/css/insightcard-style.css';
 const InsightCard = (props) => {
    return (
       <div className='insight-card-item'>

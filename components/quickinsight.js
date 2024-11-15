@@ -1,8 +1,8 @@
 import React from 'react';
-import InsightHeader from './InsightHeader.js';
-import InsightGraph from './InsightGraph.js';
-import InsightBody from './InsightBody.js';
-import insight from './assets/css/insight.css';
+import insight from './assets/css/insight-style.css';
+import InsightHeader from './insightheader';
+import InsightBody from './insightbody';
+import InsightGraph from './insightgraph';
 const QuickInsight = () => {
    return (
       <div className='insight-layout'>
@@ -15,6 +15,7 @@ const QuickInsight = () => {
             </div>
             <div className="insight-graph">
                <InsightGraph/>
+               <span className='insight-active-style'>Storage Info</span>
             </div>
          </div>
       </div>

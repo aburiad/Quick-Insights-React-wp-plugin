@@ -1,0 +1,15 @@
+.insight-header {
+   padding-bottom: 10px;
+   border-bottom: 1px solid #E5E7EB;
+   margin-bottom: 20px;
+}
+#insight-dashboard-title{
+   font-size: 18px;
+}
+span.insight-active-style {
+   display: inline-block;
+   background: #15803D;
+   color: #fff;
+   padding: 3px 7px;
+   border-radius: 10px;
+}

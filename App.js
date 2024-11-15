@@ -1,7 +1,6 @@
 import React from 'react';
 import { Fragment } from 'react/cjs/react.production.min';
-import QuickInsight from './components/Quick-Insight/QuickInsight';
-
+import QuickInsight from './components/quickinsight';
 
 const App = () => {
    return (

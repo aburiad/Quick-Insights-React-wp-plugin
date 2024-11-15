@@ -20,6 +20,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./components/Quick-Insight/InsightBody.js":
+/*!*************************************************!*\
+  !*** ./components/Quick-Insight/InsightBody.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _InsightCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InsightCard */ \"./components/Quick-Insight/InsightCard.js\");\n\n\nvar InsightBody = function InsightBody() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightCard__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InsightBody);\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/InsightBody.js?");
+
+/***/ }),
+
+/***/ "./components/Quick-Insight/InsightCard.js":
+/*!*************************************************!*\
+  !*** ./components/Quick-Insight/InsightCard.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _assets_img_Plug_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/img/Plug.png */ \"./components/Quick-Insight/assets/img/Plug.png\");\n\n\nvar InsightCard = function InsightCard() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-card-item\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-icon\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"img\", {\n    src: _assets_img_Plug_png__WEBPACK_IMPORTED_MODULE_1__,\n    alt: \"plugin icon\"\n  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-title\"\n  }, \"Simple Title\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-count\"\n  }, \"25\"));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InsightCard);\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/InsightCard.js?");
+
+/***/ }),
+
 /***/ "./components/Quick-Insight/InsightGraph.js":
 /*!**************************************************!*\
   !*** ./components/Quick-Insight/InsightGraph.js ***!
@@ -49,7 +71,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _InsightHeader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InsightHeader.js */ \"./components/Quick-Insight/InsightHeader.js\");\n/* harmony import */ var _InsightGraph_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InsightGraph.js */ \"./components/Quick-Insight/InsightGraph.js\");\n\n\n\nvar QuickInsight = function QuickInsight() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-layout\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-header\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightHeader_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-body\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-content\"\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-graph\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightGraph_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null))));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuickInsight);\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/QuickInsight.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _InsightHeader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InsightHeader.js */ \"./components/Quick-Insight/InsightHeader.js\");\n/* harmony import */ var _InsightGraph_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InsightGraph.js */ \"./components/Quick-Insight/InsightGraph.js\");\n/* harmony import */ var _InsightBody_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./InsightBody.js */ \"./components/Quick-Insight/InsightBody.js\");\n\n\n\n\nvar QuickInsight = function QuickInsight() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-layout\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-header\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightHeader_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-body\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-content\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightBody_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-graph\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightGraph_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null))));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuickInsight);\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/QuickInsight.js?");
 
 /***/ }),
 
@@ -3113,6 +3135,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./components/Quick-Insight/assets/img/Plug.png":
+/*!******************************************************!*\
+  !*** ./components/Quick-Insight/assets/img/Plug.png ***!
+  \******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"92fbfea28afdb460361d.png\";\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/assets/img/Plug.png?");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js ***!
@@ -4885,6 +4918,29 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			if (!module.children) module.children = [];
 /******/ 			return module;
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/

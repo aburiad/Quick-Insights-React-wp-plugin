@@ -27,7 +27,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _InsightCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InsightCard */ \"./components/Quick-Insight/InsightCard.js\");\n/* harmony import */ var _assets_css_insightbody_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/css/insightbody.css */ \"./components/Quick-Insight/assets/css/insightbody.css\");\n\n\n\nvar InsightBody = function InsightBody() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightCard__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n    title: \"Active Plugins\"\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightCard__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n    title: \"Current Posts\"\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightCard__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n    title: \"Current Pages\"\n  }));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InsightBody);\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/InsightBody.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _assets_img_Plug_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/img/Plug.png */ \"./components/Quick-Insight/assets/img/Plug.png\");\n/* harmony import */ var _assets_img_Reading_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/img/Reading.png */ \"./components/Quick-Insight/assets/img/Reading.png\");\n/* harmony import */ var _assets_img_Pages_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/img/Pages.png */ \"./components/Quick-Insight/assets/img/Pages.png\");\n/* harmony import */ var _InsightCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InsightCard */ \"./components/Quick-Insight/InsightCard.js\");\n/* harmony import */ var _assets_css_insightbody_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/css/insightbody.css */ \"./components/Quick-Insight/assets/css/insightbody.css\");\n\n\n\n\n\n\nvar InsightBody = function InsightBody() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightCard__WEBPACK_IMPORTED_MODULE_4__[\"default\"], {\n    icon: _assets_img_Plug_png__WEBPACK_IMPORTED_MODULE_1__,\n    title: \"Active Plugins\",\n    count: \"25\"\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightCard__WEBPACK_IMPORTED_MODULE_4__[\"default\"], {\n    icon: _assets_img_Reading_png__WEBPACK_IMPORTED_MODULE_2__,\n    title: \"Current Posts\",\n    count: \"22\"\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InsightCard__WEBPACK_IMPORTED_MODULE_4__[\"default\"], {\n    icon: _assets_img_Pages_png__WEBPACK_IMPORTED_MODULE_3__,\n    title: \"Current Pages\",\n    count: \"07\"\n  }));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InsightBody);\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/InsightBody.js?");
 
 /***/ }),
 
@@ -38,7 +38,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _assets_img_Plug_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/img/Plug.png */ \"./components/Quick-Insight/assets/img/Plug.png\");\n/* harmony import */ var _assets_css_insightcard_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/css/insightcard.css */ \"./components/Quick-Insight/assets/css/insightcard.css\");\n\n\n\nvar InsightCard = function InsightCard(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-card-item\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-title-wrapper\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-icon\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"img\", {\n    src: _assets_img_Plug_png__WEBPACK_IMPORTED_MODULE_1__,\n    alt: \"plugin icon\"\n  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-title\"\n  }, props.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-count\"\n  }, \"25\"));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InsightCard);\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/InsightCard.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _assets_css_insightcard_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/css/insightcard.css */ \"./components/Quick-Insight/assets/css/insightcard.css\");\n\n\nvar InsightCard = function InsightCard(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-card-item\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-title-wrapper\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-icon\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"img\", {\n    src: props.icon,\n    alt: \"plugin icon\"\n  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-title\"\n  }, props.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"insight-count\"\n  }, props.count));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InsightCard);\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/InsightCard.js?");
 
 /***/ }),
 
@@ -3311,6 +3311,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./components/Quick-Insight/assets/img/Pages.png":
+/*!*******************************************************!*\
+  !*** ./components/Quick-Insight/assets/img/Pages.png ***!
+  \*******************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"bd46a13685630b2bde4b.png\";\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/assets/img/Pages.png?");
+
+/***/ }),
+
 /***/ "./components/Quick-Insight/assets/img/Plug.png":
 /*!******************************************************!*\
   !*** ./components/Quick-Insight/assets/img/Plug.png ***!
@@ -3319,6 +3330,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("module.exports = __webpack_require__.p + \"92fbfea28afdb460361d.png\";\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/assets/img/Plug.png?");
+
+/***/ }),
+
+/***/ "./components/Quick-Insight/assets/img/Reading.png":
+/*!*********************************************************!*\
+  !*** ./components/Quick-Insight/assets/img/Reading.png ***!
+  \*********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+eval("module.exports = __webpack_require__.p + \"aabdc10c2b8251f6e253.png\";\n\n//# sourceURL=webpack://my-wordpress-plugin/./components/Quick-Insight/assets/img/Reading.png?");
 
 /***/ }),
 

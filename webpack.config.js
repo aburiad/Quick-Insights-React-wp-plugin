@@ -19,6 +19,10 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,  // Rule for processing image files
         type: 'asset/resource',  // Webpack 5 way to handle static assets
       },
+      {
+        test: /\.css$/,  // Rule for processing CSS files
+        use: ['style-loader', 'css-loader'],  // Use css-loader and style-loader
+      },
     ],
   },
   resolve: {

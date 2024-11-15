@@ -2,6 +2,7 @@ import React from 'react';
 import InsightHeader from './InsightHeader.js';
 import InsightGraph from './InsightGraph.js';
 import InsightBody from './InsightBody.js';
+
 const QuickInsight = () => {
    return (
       <div className='insight-layout'>

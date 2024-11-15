@@ -1,5 +1,5 @@
 import React from 'react';
-
+import insightheader from './assets/css/insightheader.css';
 const InsightHeader = () => {
    return (
       <div>

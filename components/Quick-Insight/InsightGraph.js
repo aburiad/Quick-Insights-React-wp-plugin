@@ -25,7 +25,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 
 const InsightGraph = () => {
    return (
-      <div style={{ width: '190px', height: '190px' }}> {/* Parent container with fixed height */}
+      <div style={{ width: '150px', height: '150px' }}> {/* Parent container with fixed height */}
          <ResponsiveContainer width="100%" height="100%">
             <PieChart>
                <Pie
@@ -34,7 +34,7 @@ const InsightGraph = () => {
                   cy="50%"
                   labelLine={false}
                   label={renderCustomizedLabel}
-                  outerRadius={80} // Adjusted outerRadius to fit within the container
+                  outerRadius={70} // Adjusted outerRadius to fit within the container
                   fill="#8884d8"
                   dataKey="value"
                >

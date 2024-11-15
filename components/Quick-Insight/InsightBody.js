@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import InsightCard from './InsightCard';
-
+import insightbody from './assets/css/insightbody.css';
 const InsightBody = () => {
    return (
-      <div>
-         <InsightCard/>
-      </div>
+      <Fragment>
+         <InsightCard title="Active Plugins"/>
+         <InsightCard title="Current Posts"/>
+         <InsightCard title="Current Pages"/>
+      </Fragment>
    );
 };
 

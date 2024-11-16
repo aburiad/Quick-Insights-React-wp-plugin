@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = ['#C6E7FF', '#D4F6FF', '#B3E1ED', '#FF8042'];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, name }) => {
@@ -14,7 +14,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
     <text
       x={x}
       y={y}
-      fill="white"
+      fill="#1e1e1e"
       textAnchor="middle" // Center text horizontally
       dominantBaseline="middle" // Center text vertically
     >

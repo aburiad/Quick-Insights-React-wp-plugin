@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { RotatingLines } from 'react-loader-spinner';
+
 
 const COLORS = ['#C6E7FF', '#D4F6FF', '#B3E1ED', '#FF8042'];
 
@@ -43,7 +45,17 @@ const InsightGraph = () => {
   }, []); // Only runs on mount
 
   if (loading) {
-    return <div>Loading storage information...</div>;
+    return <RotatingLines
+      visible={true}
+      height="150"
+      width="150"
+      color="#15803D"
+      strokeWidth="5"
+      animationDuration="0.75"
+      ariaLabel="rotating-lines-loading"
+      wrapperStyle={{}}
+      wrapperClass=""
+    />;
   }
 
   if (error) {

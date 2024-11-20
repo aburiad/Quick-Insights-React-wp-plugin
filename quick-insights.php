@@ -102,3 +102,6 @@ function register_custom_api_endpoints() {
 }
 
 add_action('rest_api_init', 'register_custom_api_endpoints');
+
+
+require_once '/inc/email-notification.php';

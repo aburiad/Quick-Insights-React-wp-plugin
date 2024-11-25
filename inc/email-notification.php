@@ -85,5 +85,43 @@ function send_disk_space_alert_email($usedPercentage) {
     // Write the log message to the log file, appending the new message (LOCK_EX prevents overwriting)
     file_put_contents($log_file_path, $log_message, LOCK_EX);
 }
-
 add_action('admin_init', 'check_disk_space_and_notify');
+
+/**
+ * create function 
+ * 
+ * return @void
+ */
+
+function checkNotify($value){
+   
+}
+
+
+// Register custom API endpoints
+function notify_custom_api_endpoints() {
+    register_rest_route('notify-api/v1', '/notify', [
+        'methods'  => 'POST',
+        'callback' => 'handle_post_request',
+        'permission_callback' => '__return_true', // Update for proper permissions
+    ]);
+}
+
+add_action('rest_api_init', 'notify_custom_api_endpoints');
+
+/**
+ * Register Custom Api
+ * 
+ * return function
+ */
+function handle_post_request(WP_REST_Request $request) {
+    $data = $request->get_json_params();
+
+    // Validate the data
+    if (empty($data['name']) || empty($data['email'])) {
+        return new WP_Error('invalid_data', 'Name and email are required', ['status' => 400]);
+    }
+
+    // Process the data
+    return rest_ensure_response(['message' => 'Data received successfully']);
+}

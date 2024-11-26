@@ -85,43 +85,68 @@ function send_disk_space_alert_email($usedPercentage) {
     // Write the log message to the log file, appending the new message (LOCK_EX prevents overwriting)
     file_put_contents($log_file_path, $log_message, LOCK_EX);
 }
-add_action('admin_init', 'check_disk_space_and_notify');
+
 
 /**
- * create function 
+ *  kickoff check_notify
  * 
- * return @void
+ * return void
  */
-
-function checkNotify($value){
-   
+function check_notify(){
+    add_action('admin_init', 'check_disk_space_and_notify');
 }
 
 
-// Register custom API endpoints
-function notify_custom_api_endpoints() {
-    register_rest_route('notify-api/v1', '/notify', [
-        'methods'  => 'POST',
-        'callback' => 'handle_post_request',
-        'permission_callback' => '__return_true', // Update for proper permissions
-    ]);
-}
-
-add_action('rest_api_init', 'notify_custom_api_endpoints');
+/**
+ *  initialize rest api
+ * 
+ * return void
+ */
+add_action('rest_api_init', function() {
+    register_rest_route('custom-api/v1', '/notify', array(
+        'methods' => 'POST',  // Define POST method
+        'callback' => 'notify_endpoint_callback',
+    ));
+});
 
 /**
- * Register Custom Api
+ *  create function notify_endpoint_callback
  * 
- * return function
+ * return void
  */
-function handle_post_request(WP_REST_Request $request) {
-    $data = $request->get_json_params();
+function notify_endpoint_callback(WP_REST_Request $request) {
+    $data = $request->get_json_params();  // Get the POST data
 
-    // Validate the data
-    if (empty($data['name']) || empty($data['email'])) {
-        return new WP_Error('invalid_data', 'Name and email are required', ['status' => 400]);
+    try {
+        if (empty($data)) {
+            // If no data, return a 400 Bad Request error with a clear message
+            return new WP_REST_Response([
+                'status' => 'error',
+                'message' => 'No data received'
+            ], 400);
+        }
+
+        // Call the check_notify function (ensure it is defined and handles notifications)
+        check_notify();
+
+        // Return a successful response with the received data
+        return new WP_REST_Response([
+            'status' => 'success',
+            'message' => 'Notify endpoint received successfully',
+            'data' => $data
+        ], 200);
+
+    } catch (Exception $e) {
+        // Catch any exception and log the error for debugging
+        error_log('Error processing notify endpoint: ' . $e->getMessage());
+
+        // Return a 500 Internal Server Error response with a detailed error message
+        return new WP_REST_Response([
+            'status' => 'error',
+            'message' => 'Error processing notify endpoint: ' . $e->getMessage()
+        ], 500);
     }
-
-    // Process the data
-    return rest_ensure_response(['message' => 'Data received successfully']);
 }
+
+
+

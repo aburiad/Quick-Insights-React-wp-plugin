@@ -41,6 +41,8 @@ function check_disk_space_and_notify() {
     }
 }
 
+
+
 /**
  * Sends a disk space alert email to the admin when disk usage exceeds a certain threshold.
  *
@@ -52,6 +54,7 @@ function check_disk_space_and_notify() {
  * @return void
  */
 function send_disk_space_alert_email($usedPercentage) {
+
     // Get the admin's email address from WordPress settings
     $admin_email = get_option('admin_email');  // Retrieve the admin's email dynamically
 
@@ -85,7 +88,6 @@ function send_disk_space_alert_email($usedPercentage) {
     // Write the log message to the log file, appending the new message (LOCK_EX prevents overwriting)
     file_put_contents($log_file_path, $log_message, LOCK_EX);
 }
-
 
 /**
  *  kickoff check_notify
@@ -147,6 +149,3 @@ function notify_endpoint_callback(WP_REST_Request $request) {
         ], 500);
     }
 }
-
-
-

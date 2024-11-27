@@ -3,13 +3,29 @@ import './assets/css/email-notification-style.css';
 import axios from 'axios';
 
 export default function emailNotification() {
-    const [notify, setNotify] = useState(false);
+    const [isChecked, setIsChecked] = useState(false);
     const [response, setResponse] = useState();
+
+    // Load saved state from localStorage on component mount
+    useEffect(() => {
+        const savedState = localStorage.getItem("toggleState");
+        if (savedState !== null) {
+            setIsChecked(savedState === "true");
+        }
+    }, []);
+
+    // Handle toggle change
+    const handleToggleChange = () => {
+        const newState = !isChecked;
+        setIsChecked(newState);
+        localStorage.setItem("toggleState", newState);
+        notifyCheck();
+    };
 
     const notifyCheck = async () => {
         try {
             const response = await axios.post(siteData.siteUrl + '/wp-json/custom-api/v1/notify', {
-                notify: !notify,  // Send the updated notify value
+                $isChecked: !isChecked,  // Send the updated notify value
             }, {
                 headers: {
                     'Content-Type': 'application/json',
@@ -18,15 +34,13 @@ export default function emailNotification() {
 
             // Log the successful response if status code 200 is received
             if (response.status === 200) {
+                setResponse(response.data);
                 console.log('Success Response:', response.data);
             }
         } catch (error) {
             console.error('Error:', error.response ? error.response.data : error.message);
         }
     };
-
-
-
 
     return (
         <>
@@ -37,7 +51,9 @@ export default function emailNotification() {
                 </div>
                 <div className='switch-wrapper'>
                     <label className="switch">
-                        <input type="checkbox" onChange={notifyCheck} />
+                        <input type="checkbox" checked={isChecked}
+                            onChange={handleToggleChange}
+                        />
                         <span className="slider round"></span>
                     </label>
                 </div>

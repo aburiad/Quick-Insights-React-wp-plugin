@@ -94,8 +94,11 @@ function send_disk_space_alert_email($usedPercentage) {
  * 
  * return void
  */
-function check_notify(){
-    add_action('admin_init', 'check_disk_space_and_notify');
+
+function check_notify($value){
+    if( $value ){
+        add_action('admin_init', 'check_disk_space_and_notify');
+    }
 }
 
 
@@ -118,7 +121,6 @@ add_action('rest_api_init', function() {
  */
 function notify_endpoint_callback(WP_REST_Request $request) {
     $data = $request->get_json_params();  // Get the POST data
-
     try {
         if (empty($data)) {
             // If no data, return a 400 Bad Request error with a clear message
@@ -127,15 +129,13 @@ function notify_endpoint_callback(WP_REST_Request $request) {
                 'message' => 'No data received'
             ], 400);
         }
-
         // Call the check_notify function (ensure it is defined and handles notifications)
-        check_notify();
+        check_notify($data);
 
         // Return a successful response with the received data
         return new WP_REST_Response([
             'status' => 'success',
             'message' => 'Notify endpoint received successfully',
-            'data' => $data
         ], 200);
 
     } catch (Exception $e) {

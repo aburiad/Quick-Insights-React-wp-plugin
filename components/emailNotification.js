@@ -4,7 +4,6 @@ import axios from 'axios';
 
 export default function emailNotification() {
     const [isChecked, setIsChecked] = useState(false);
-    const [response, setResponse] = useState();
 
     // Load saved state from localStorage on component mount
     useEffect(() => {
@@ -34,8 +33,7 @@ export default function emailNotification() {
 
             // Log the successful response if status code 200 is received
             if (response.status === 200) {
-                setResponse(response.data);
-                console.log('Success Response:', response.data);
+                console.log('Success Response');
             }
         } catch (error) {
             console.error('Error:', error.response ? error.response.data : error.message);

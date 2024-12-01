@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
-const COLORS = ['#C6E7FF', '#D4F6FF', '#B3E1ED', '#FF8042'];
+const COLORS = ['#C6E7FF', '#FF8042']; // Adjusted colors for Free and Used
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, name }) => {
@@ -15,10 +15,9 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
       x={x}
       y={y}
       fill="#1e1e1e"
-      textAnchor="middle" // Center text horizontally
-      dominantBaseline="middle" // Center text vertically
+      textAnchor="middle"
+      dominantBaseline="middle"
     >
-      {/* Adding both the name and the percentage */}
       {`${name}: ${(percent * 100).toFixed(0)}%`}
     </text>
   );
@@ -30,17 +29,16 @@ const InsightGraph = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch server storage info from the WordPress custom API endpoint
-    axios.get(siteData.siteUrl + '/wp-json/custom-api/v1/storage')
+    axios.get(siteData.siteUrl + '/wp-json/quick-insights-api/v1/storage')
       .then(response => {
-        setStorage(response.data);  // Store the data in state
-        setLoading(false);  // Set loading to false once data is fetched
+        setStorage(response.data); // Use only 'free' and 'used' values
+        setLoading(false);
       })
-      .catch(err => {
+      .catch(() => {
         setError('Error fetching storage info');
         setLoading(false);
       });
-  }, []); // Only runs on mount
+  }, []);
 
   if (loading) {
     return <div>Loading storage information...</div>;
@@ -50,9 +48,8 @@ const InsightGraph = () => {
     return <div>{error}</div>;
   }
 
-  // Ensure the storage data is available before rendering the chart
+  // Only Free and Used space included in data
   const data = [
-    { name: 'Total', value: storage.total },
     { name: 'Free', value: storage.free },
     { name: 'Used', value: storage.used },
   ];

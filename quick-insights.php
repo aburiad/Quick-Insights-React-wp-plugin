@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: Quick Insights
  * Text Domain: quick-insights
@@ -13,55 +14,56 @@
  */
 
 // Enqueue React script
-function wp_react_kickoff_enqueue_scripts() {
-    // Enqueue the React JS file
+function quick_insights_enqueue_scripts()
+{
     wp_enqueue_script(
-        'wp-react-kickoff-admin-js',
-        plugins_url('/dist/bundle.js', __FILE__), // Path to your React bundle
-        ['wp-element'], 
+        'quick-insights-admin-js',
+        plugins_url('/dist/bundle.js', __FILE__),
+        ['wp-element'],
         null,
         true
     );
 
-    // Localize script to pass dynamic site URL to JS
-    wp_localize_script('wp-react-kickoff-admin-js', 'siteData', [
+    wp_localize_script('quick-insights-admin-js', 'siteData', [
         'siteUrl' => get_site_url(),
         'themeName' => wp_get_theme()->get('Name')
     ]);
 }
-add_action('admin_enqueue_scripts', 'wp_react_kickoff_enqueue_scripts');
+add_action('admin_enqueue_scripts', 'quick_insights_enqueue_scripts');
 
 // Add dashboard widget for Quick Insights
-function quick_dashboard_get() {
+function quick_insights_add_dashboard_widget()
+{
     wp_add_dashboard_widget(
-        'quick_insights_widget', 
+        'quick_insights_widget',
         'Quick Insights',
-        'quick_insights_display'
+        'quick_insights_display_dashboard_widget'
     );
 }
+add_action('wp_dashboard_setup', 'quick_insights_add_dashboard_widget');
 
-function quick_insights_display() {
-    // This is where the React component will render
+// Display function for the dashboard widget
+function quick_insights_display_dashboard_widget()
+{
     echo '<div id="my-custom-menu-root"></div>';
 }
 
-add_action('wp_dashboard_setup', 'quick_dashboard_get');
-
-// Function to get active plugins count
-function get_active_plugins_count(WP_REST_Request $request) {
-    $active_plugins = get_option('active_plugins'); // Get list of active plugins
+// Get active plugins count
+function quick_insights_get_active_plugins_count(WP_REST_Request $request)
+{
+    $active_plugins = get_option('active_plugins');
     return rest_ensure_response(['active_plugins' => count($active_plugins)]);
 }
 
-// Function to get server storage information
-function get_server_storage_info() {
-    $total_space = disk_total_space('/'); 
-    $free_space = disk_free_space('/'); 
+// Get server storage information
+function quick_insights_get_server_storage_info()
+{
+    $total_space = disk_total_space('/');
+    $free_space = disk_free_space('/');
 
-    // Convert bytes to megabytes for readability
     $total_space_mb = round($total_space / 1024 / 1024, 2);
     $free_space_mb = round($free_space / 1024 / 1024, 2);
-    $used_space_mb = $total_space_mb - $free_space_mb; 
+    $used_space_mb = $total_space_mb - $free_space_mb;
 
     return [
         'total' => $total_space_mb,
@@ -70,9 +72,10 @@ function get_server_storage_info() {
     ];
 }
 
-// Function to get active theme information
-function get_active_theme_info(WP_REST_Request $request) {
-    $theme = wp_get_theme(); // Get active theme details
+// Get active theme information
+function quick_insights_get_active_theme_info(WP_REST_Request $request)
+{
+    $theme = wp_get_theme();
     return rest_ensure_response([
         'name' => $theme->get('Name'),
         'theme_directory' => $theme->get('Template'),
@@ -82,23 +85,23 @@ function get_active_theme_info(WP_REST_Request $request) {
 }
 
 // Register custom API endpoints
-function register_custom_api_endpoints() {
-    register_rest_route('custom-api/v1', '/storage', [
+function quick_insights_register_api_endpoints()
+{
+    register_rest_route('quick-insights-api/v1', '/storage', [
         'methods' => 'GET',
-        'callback' => function() {
-            return new WP_REST_Response(get_server_storage_info(), 200);
+        'callback' => function () {
+            return new WP_REST_Response(quick_insights_get_server_storage_info(), 200);
         },
     ]);
 
-    register_rest_route('custom-api/v1', '/active-plugins', [
+    register_rest_route('quick-insights-api/v1', '/active-plugins', [
         'methods' => 'GET',
-        'callback' => 'get_active_plugins_count',
+        'callback' => 'quick_insights_get_active_plugins_count',
     ]);
-    
-    register_rest_route('custom-api/v1', '/active-theme', [
+
+    register_rest_route('quick-insights-api/v1', '/active-theme', [
         'methods' => 'GET',
-        'callback' => 'get_active_theme_info',
+        'callback' => 'quick_insights_get_active_theme_info',
     ]);
 }
-
-add_action('rest_api_init', 'register_custom_api_endpoints');
+add_action('rest_api_init', 'quick_insights_register_api_endpoints');

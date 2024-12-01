@@ -6,7 +6,7 @@ const InsightHeader = () => {
    const [themeDirectory, setThemeDirectory] = useState('');
 
    useEffect(() => {
-      fetch(siteData.siteUrl + '/wp-json/custom-api/v1/active-theme')
+      fetch(siteData.siteUrl + '/wp-json/quick-insights-api/v1/active-theme')
          .then(response => response.json())
          .then(data => {
             setThemeName(data.name); // Corrected key

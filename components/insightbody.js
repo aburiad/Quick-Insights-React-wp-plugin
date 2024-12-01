@@ -32,7 +32,7 @@ const InsightBody = () => {
 
    // Fetch active plugin count
    useEffect(() => {
-      fetch(siteData.siteUrl + '/wp-json/custom-api/v1/active-plugins')
+      fetch(siteData.siteUrl + '/wp-json/quick-insights-api/v1/active-plugins')
          .then(response => response.json())
          .then(data => {
             setActivePlugin(data.active_plugins);
